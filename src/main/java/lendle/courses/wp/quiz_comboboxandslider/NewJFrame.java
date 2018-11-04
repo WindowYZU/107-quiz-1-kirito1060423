@@ -42,7 +42,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -50,12 +50,12 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jSlider1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jSlider1AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -100,22 +100,13 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        JComboBox<String> jComboBox1=new JComboBox<>();
-        for(int i=0;i<=100;i=i+10){
-            jComboBox1.addItem(""+i);
-        }
+        String value=(String) jComboBox1.getSelectedItem();
+        jSlider1.setValue(Integer.valueOf(value));
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jSlider1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jSlider1AncestorAdded
         // TODO add your handling code here:
-        JSlider jSlider1 = new JSlider();
-        jSlider1.setMaximum(100);
-        jSlider1.setMinimum(0);
-        jSlider1.setValue(50);
-        jSlider1.setPaintTicks(true);
-        jSlider1.setPaintTrack(true);
-        jSlider1.setMinorTickSpacing(5);
-        jSlider1.setMajorTickSpacing(20);
+        
         
     }//GEN-LAST:event_jSlider1AncestorAdded
 
